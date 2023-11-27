@@ -110,6 +110,14 @@ async function checkWeather() {
 
       `;
     }
+  } else {
+    card.innerHTML = `
+
+        <div class="error">
+          <p>*Please Enter Something.</p>
+        </div>
+
+      `;
   }
 }
 
