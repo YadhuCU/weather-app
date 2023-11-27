@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Weather API</title>
+  </head>
+  <body>
+    <nav class="blur container">
+      <div>
+        <img src="images/icon.png" width="50" alt="" />
+        <h1>WeatherMe</h1>
+        <p id="nav"></p>
+      </div>
+      <ul>
+        <li onclick="today()">today</li>
+        <li onclick="checkTommorow()">tommorow</li>
+      </ul>
+    </nav>
+    <section class="container">
+      <form action="" class="blur">
+        <input type="text" id="query" />
+        <input type="button" value="Check" onclick="checkWeather()" />
+      </form>
+    </section>
+    <section id="card"></section>
+    <section id="forcast">
+      <div class="container" id="forcast-container"></div>
+    </section>
+  </body>
+</html>

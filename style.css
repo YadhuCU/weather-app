@@ -1,0 +1,255 @@
+:root {
+  --clr-primary: #fefefa;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  background: url("https://source.unsplash.com/nature-photography-of-pine-trees-covered-by-fogs-TEND07a9xDg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--clr-primary);
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 500px) {
+  nav {
+    gap: 2rem;
+  }
+}
+nav div {
+  position: relative;
+}
+nav img {
+  position: absolute;
+  top: -21px;
+  left: -19px;
+  z-index: 99;
+}
+nav h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  transform: translateX(10px);
+}
+.container {
+  width: min(80%, 1200px);
+  margin-inline: auto;
+  padding-inline: 2rem;
+  margin-block: 1rem;
+}
+ul {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+li {
+  font-size: 2rem;
+  font-weight: bold;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  li {
+    font-size: 1.5rem;
+  }
+}
+li::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  transition: all 225ms ease;
+  background: white;
+  z-index: 99;
+}
+li:hover::after,
+li:focus::after {
+  left: 0;
+  right: 0;
+}
+section {
+  display: grid;
+  place-content: center;
+}
+form {
+  display: flex;
+}
+@media (max-width: 500px) {
+  form {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  input[type="text"],
+  input[type="button"] {
+    margin-inline: 0px !important;
+    font-size: 1rem !important;
+  }
+}
+input[type="text"],
+input[type="button"] {
+  padding: 0.3em 0.8em;
+  background: none;
+  border-radius: 20px;
+  margin-inline: 1rem;
+  font-size: 1.5rem;
+  border: 2px solid white;
+  color: var(--clr-primary);
+  font-weight: bold;
+}
+input[type="button"] {
+  cursor: pointer;
+}
+.blur {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  --webkit-backdrop-filter: blur(5px);
+  padding: 2em 3em;
+  border-radius: 30px;
+}
+@media (max-width: 500px) {
+  .blur {
+    padding: 2em 2em;
+  }
+}
+.card {
+  margin: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-areas:
+    "city temp temp temp"
+    "date temp temp temp"
+    "hum vis pres wind";
+  gap: 2rem;
+}
+@media (max-width: 500px) {
+  .card {
+    gap: 1rem;
+    grid-template-areas:
+      " temp temp"
+      " temp temp"
+      " city city"
+      "date date"
+      "hum vis"
+      "pres wind";
+  }
+}
+#card > div {
+  font-size: 1.2rem;
+  padding: 3rem 2rem;
+}
+
+@media (max-width: 500px) {
+  #card > div {
+    font-size: 1rem;
+    padding: 2rem 1rem;
+  }
+}
+div > span {
+  font-weight: bold;
+  display: block;
+  font-size: 2rem;
+}
+#city {
+  grid-area: city;
+  font-size: 3rem;
+  font-weight: bold;
+}
+#date {
+  grid-area: date;
+}
+#temp {
+  grid-area: temp;
+  display: grid;
+  place-content: center;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+#temp > span {
+  font-size: 3rem;
+}
+#temp > div {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-transform: capitalize;
+}
+#humidity {
+  grid-area: hum;
+}
+#visibility {
+  grid-area: vis;
+}
+#air-presure {
+  grid-area: pres;
+}
+#wind {
+  grid-area: wind;
+}
+#forcast {
+  display: block;
+}
+
+#forcast .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+@media (max-width: 500px) {
+  #forcast .container {
+    gap: 1rem;
+    padding-inline: 0px;
+  }
+}
+
+.small-card {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  --webkit-backdrop-filter: blur(5px);
+  padding: 1.8rem;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  gap: 3rem;
+  overflow: hidden;
+}
+.small-card > p:last-child {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.small-card img {
+  position: absolute;
+  top: 23px;
+}
+.small-card::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+  border-radius: 100%;
+  transform: translate(-61px, 48px);
+}
+.small {
+  font-size: 1rem;
+  font-weight: 400;
+}
